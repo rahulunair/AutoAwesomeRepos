@@ -1,5 +1,7 @@
 ## Awesome List generator
 
+Autogenerate Awesome Lists of repos based on your interest using AI.
+
 This repo has code that will fetch repos based on the topics of interest in `config.py` 
 Genertes descriptions for each projects
 Does a zero shot topic generation for the repos
