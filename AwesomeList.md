@@ -6,7 +6,6 @@ A curated list of awesome GitHub repositories related to various categories.
 
 ### Medical and Life Sciences
 
-- [repo_url](repo_url):keyword: keyword: brief_desc ![GitHub stars](https://img.shields.io/badge/stars-num_stars-blue)
 - [ha-card-weather-conditions](https://github.com/r-renato/ha-card-weather-conditions):keyword: dpc++: Weather conditions card is a lovelace card for home assistant . The card has been tested with the sensors provided by climacell darksky and openweathermap integrations ![GitHub stars](https://img.shields.io/badge/stars-138-blue)
 - [covid-19](https://github.com/datasets/covid-19):keyword: dpc++: coronavirus disease covid 19 time series listing confirmed cases reported deaths and reported recoveries . data is disaggregated by country and sometimes subregion . on march 11 2020 the world health organization who declared it a pandemic pointing to the over 118 000 cases of the coronav virus illness in over 110 countries and territories around the world at the time ![GitHub stars](https://img.shields.io/badge/stars-1155-blue)
 - [intel-mkl-src](https://github.com/rust-math/intel-mkl-src):keyword: intel oneapi: intel mkl is distributed under the simplified software license for intel kernel software . The lib math library is not supported yet . Intel mkl tool is a tool that seeks mkl libraries to executable build by cargo but does not provide rust bindings . There are 8 features to specify how to link mkl ![GitHub stars](https://img.shields.io/badge/stars-58-blue)
