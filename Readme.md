@@ -23,6 +23,8 @@ After this is run, the data is saved in `./repo_lists/` directory. To autogenera
 python csv_utils.py ./repo_lists/<csv_file_name.csv>  # this csv is the file that we got from the previous step
 ```
 
+You can give a name for the markdown file as well, by default the the file name used would be `AwesomeList.md`, I have added an Awesome list with auto generated lists here, check it out at ./AwesomeOneAPIList.md`
+
 We are using a few language models here, `paraphrase-MiniLM-L6-v2` with sentence transformers for zero-shot topic generation, distbart for description generation etc.
 
 ## This code runs on Intel discrete GPUs(XPU)
