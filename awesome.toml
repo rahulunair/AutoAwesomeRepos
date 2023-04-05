@@ -1,0 +1,5 @@
+PROGRESS_FILE = "progress.json"
+NUM_STARS = 30
+DAYS_AGO = 183
+#README_KEYWORDS = [ "openvino", "intel_extension_for_pytorch", "intel_extension_for_transformers", "intel_extension_for_horovod", "intel_neural_compressor", "intel_extension_for_tensorflow", "Intel oneAPI Base Toolkit", "oneAPI DPC++ Compiler", "DPC++ Compatibility Tool", "oneAPI Data Analytics Library", "oneAPI Deep Neural Network Library", "oneAPI Collective Communications Library", "oneAPI DPC++ Library", "oneAPI Threading Building Blocks", "oneAPI Video Processing Library", "oneAPI Math Kernel Library", "oneAPI Base Toolkit", "oneAPI AI Toolkit", "oneAPI HPC Toolkit", "oneAPI Rendering Toolkit", "daal4py", "scikit-learn-intelex", "oneTBB", "oneMKL", "oneVPL", "oneDPL", "oneCCL", "onednn", "open VKL", "Embree", "OSPRay", "Open Image Denoise", "intel oneapi", "ComputeCpp", "Open SYCL", "triSYCL", "oneAPI Level Zero",]
+README_KEYWORDS = [ "intel_extension_for_pytorch"]
