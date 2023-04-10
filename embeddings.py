@@ -1,18 +1,16 @@
 import os
 import pickle
 
-import torch
-#import intel_extension_for_pytorch as ipex
+# import intel_extension_for_pytorch as ipex
 import openai
+import torch
+from pyrate_limiter import Duration, Limiter, RequestRate
 from sentence_transformers import SentenceTransformer
 from sklearn.preprocessing import normalize
 
-from pyrate_limiter import Duration, Limiter, RequestRate
-
-
 rate_limits = (RequestRate(50, Duration.MINUTE),)
 limiter = Limiter(*rate_limits)
-#device = "xpu" if torch.xpu.is_available() else "cpu"
+# device = "xpu" if torch.xpu.is_available() else "cpu"
 device = "cpu"
 category_examples = {
     "AI - Machine Learning": "scikit-learn, lighgbm,  xgboost, gradient boosting Linear Regression, Logistic Regression, Decision Trees, Random Forest, Naïve Bayes, k-Nearest Neighbors, Support Vector Machines, Principal Component Analysis, k-Means, DBSCAN, Hierarchical Clustering, AdaBoost, Gradient Boosting, XGBoost, LightGBM, CatBoost, Hidden Markov Models, Expectation Maximization, Gaussian Mixture Models, Latent Dirichlet Allocation, streaming processing,  Supervised and unsupervised machine learning projects using scikit-learn, daal4py, or R for classification, regression, or clustering tasks",

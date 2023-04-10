@@ -54,7 +54,9 @@ class LicenseParser:
         self.license_file = license_file
 
     def parse(self):
-        if self.license_file is not None:
+        if self.license_file:
+            if self.license_file.license.name != "Other":
+                return self.license_file.license.name
             license_content = self.license_file.decoded_content.decode()
             license_lines = license_content.split("\n")
             license_first_line = license_lines[0].strip()
@@ -65,6 +67,5 @@ class LicenseParser:
                 license_second_line = license_lines[1].strip()
                 if license_second_line.startswith("Version 2.0"):
                     return "Apache License 2.0"
-
-            return "Unknown License"
-        return "Unknown License"
+            return "Other"
+        return "Other"

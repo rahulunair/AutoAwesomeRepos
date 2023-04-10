@@ -1,22 +1,23 @@
-from functools import partial
 import os
 import re
+import string
+from functools import partial
 
 import numpy as np
+import spacy
+import torch
 from rank_bm25 import BM25Okapi
 from rich.console import Console
 from rich.style import Style
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import normalize
-import spacy
-import torch
-#import intel_extension_for_pytorch
-from embeddings import category_examples
-from embeddings import openai_normalized_categories
-from embeddings import transformer_normalized_categories
-from embeddings import generate_transformer_embeddings
-from embeddings import generate_openai_embeddings
+
+# import intel_extension_for_pytorch
+from embeddings import (category_examples, generate_openai_embeddings,
+                        generate_transformer_embeddings,
+                        openai_normalized_categories,
+                        transformer_normalized_categories)
 
 console = Console()
 print = partial(console.print, style=Style.parse("cyan"))
@@ -142,8 +143,11 @@ def is_relevant_context(text, keyword):
     tfidf_weight = 0.3
     bm25_weight = 0.7
     max_score = np.sqrt(tfidf_weight ** 2 + bm25_weight ** 2)
-    normalized_score = bm25_weight * bm25_score(
-        text, keyword
-    ) + tfidf_weight * tfidf_score(text, keyword)
+    try:
+        normalized_score = bm25_weight * bm25_score(
+            text, keyword
+        ) + tfidf_weight * tfidf_score(text, keyword)
+    except ZeroDivisionError:
+        normalized_score = tfidf_weight * tfidf_score(text, keyword)
     normalized_score /= max_score
     return True if normalized_score > 0.5 else False

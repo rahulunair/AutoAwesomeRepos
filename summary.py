@@ -3,13 +3,11 @@ import sys
 
 import openai
 import torch
-#import intel_extension_for_pytorch as ipex
-from transformers import AutoModelForSeq2SeqLM
-from transformers import AutoTokenizer
-
 from pyrate_limiter import Duration, Limiter, RequestRate
+# import intel_extension_for_pytorch as ipex
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-#device = "xpu" if torch.xpu.is_available() else "cpu"
+# device = "xpu" if torch.xpu.is_available() else "cpu"
 device = "cpu"
 bart_model = AutoModelForSeq2SeqLM.from_pretrained("sshleifer/distilbart-cnn-12-6")
 bart_tokenizer = AutoTokenizer.from_pretrained("sshleifer/distilbart-cnn-12-6")
